@@ -1,0 +1,208 @@
+<DOCTYPE html>
+    {% load static %}
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+            <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+            <link rel="stylesheet" href="{% static 'css/style_restaurants.css' %}" />
+            <link rel="shortcut icon" type="image/png" href="{% static 'images/favicon.png' %}"/>
+            <title>DailyFood.com</title>
+            <script src="https://code.jquery.com/jquery-3.6.2.js" integrity="sha256-pkn2CUZmheSeyssYw3vMp1+xyub4m+e+QK4sQskvuo4=" crossorigin="anonymous"></script>
+        </head>
+        <body>
+          <div class="container_head">
+            <nav class="nav-bar">
+              <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
+              <div>
+                <ul class="nav">
+                  <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                  <li class="nav-item"><a href="{% url 'restaurants' %}">Restaurant</a></li>
+                  <li class="nav-item"><a href="#">SuperMarket</a></li>
+                  <li class="nav-item"><a href="#">Contact Us</a></li>
+                  <li class="nav-item"><a href="#">Connexion</a></li>
+                <ul>
+              </div>
+              <div>
+                <ul class="nav no-search">
+                  <li>
+                    <div style="display:flex;">
+                      <div class="btn_cart"><ion-icon name="cart"></ion-icon></div>
+                      <div class="nbr_produit"><h6 id="cart_length">0</h6></div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="search">
+                      <div class="btn_search"></div>
+                      <div class="search-input">
+                        <input type="text" id="input_search" placeholder="Search ..."/>
+                      </div>
+                      <span class="clear" onclick="document.getElementById('input_search').value =''"></span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+              <div class="description">
+                <div class="text print">Profitez des meilleurs services de livraisons.</div>
+                <div class="text">Profitez des meilleurs services de restaurations.</div>
+                <div class="text">Profitez des meilleurs produits disponible sur le marchée.</div>
+                <div class="text">Reservez dans les meilleurs restaurants en un clic.</div>
+              </div>
+              <img class="container_img active" src="{% static 'images/img10.jpg' %}">
+              <img class="container_img" src="{% static 'images/img7.jpg' %}">
+              <img class="container_img" src="{% static 'images/img9.jpg' %}">
+              <img class="container_img" src="{% static 'images/img1.jpg' %}">
+              <div class="next" onmouseover="this.className='nexth'" 
+              onmouseout="this.className='next'"><ion-icon name="chevron-forward-outline"></ion-icon></div>
+              <div class="preview" onmouseover="this.className='previewh'" 
+              onmouseout="this.className='preview'"><ion-icon name="chevron-back-outline"></ion-icon></div>
+            </div>
+            <br>
+            <!-- shopping cart -->
+            <div class="shopping_cart visible">
+              <h1>Your Cart</h1>
+              <hr>
+              <span class="reload"><ion-icon name="refresh-outline"></ion-icon></span>
+              <div class="content_cart">
+                {% block content_cart %}
+                {% endblock content_cart %}
+              </div>
+              <hr>
+              <span class="total"><h2>Total :</h2><h2> 240000 </h2><h4>fcfa</h4></span>
+              <button class="buy_now">BUY NOW</button>
+            </div>
+            {% block coontent_home %}
+            {% endblock coontent_home %}
+            <div class="btn_back_up">
+              <ion-icon name="arrow-up-outline"></ion-icon>
+            </div>
+            <footer class="footer-distributed">
+    
+              <div class="footer-left">
+      
+                  <img class="logo_footer" src="{% static 'images/logo2.png' %}" alt="DailyFood.com">
+      
+                  <p class="footer-links">
+                      <a href="#">Home</a>
+                      ·
+                      <a href="#">Pricing</a>
+                      ·
+                      <a href="#">About</a>
+                      ·
+                      <a href="#">Faq</a>
+                      ·
+                      <a href="#">Contact</a>
+                  </p>
+      
+                  <p class="footer-company-name">Daily-Food &copy; 2022</p>
+              </div>
+      
+              <div class="footer-center">
+      
+                  <div>
+                      <ion-icon name="location-outline"></ion-icon>
+                      <p><span>Yaoundé </span> CAMEROUN</p>
+                  </div>
+      
+                  <div>
+                      <ion-icon name="call-outline"></ion-icon>
+                      <p>+237 680-77-51-86</p>
+                  </div>
+      
+                  <div>
+                      <ion-icon name="mail-outline"></ion-icon>
+                      <p>
+                          <a href="mailto:support@company.com">Contacts@DailyFood.com</a>
+                      </p>
+                  </div>
+      
+              </div>
+      
+              <div class="footer-right">
+      
+                  <p class="footer-company-about">
+                      <span>About the company</span>
+                      DailyFood is a delivery site for food and consumer-related products.
+                  </p>
+      
+                  <div class="footer-icons">
+                      <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                      <a href="https://wa.me/qr/P7NW6KPL4OBUE1 "><ion-icon name="logo-whatsapp"></ion-icon></a>
+                      <a href="#"><ion-icon name="logo-linkedin"></ion-icon></a>
+                      <a href="https://github.com/paulfoko"><ion-icon name="logo-github"></ion-icon></a>
+                  </div>
+              </div>
+          </footer><div class="content_bottom">
+                        Conception / logo du site © 2022 Paul canvas ; contributions des utilisateurs sous licence CC BY-SA . rév 2022.11.22.43050
+                    </div>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
+            <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+            <script src="{% static 'js/script.js' %}"></script>
+            <script>
+              var TrandingSlider = new Swiper('.tranding-slider', {
+                  effect: 'coverflow',
+                  grabCursor: true,
+                  centeredSlides: true,
+                  loop: true,
+                  slidesPerView: 'auto',
+                  coverflowEffect: {
+                      rotate: 0,
+                      stretch: 0,
+                      depth: 100,
+                      modifier: 2.5,
+                  },
+                  pagination: {
+                      el: '.swiper-pagination',
+                      clickable: true,
+                  },
+                  navigation: {
+                      nextEl: '.swiper-button-next',
+                      prevEl: '.swiper-button-prev',
+                  }
+                  });
+              
+
+              let btn_search= document.querySelector('.btn_search');
+              let search= document.querySelector('.search');
+              btn_search.onclick = function(){
+                search.classList.toggle('visible');
+              }
+              let btn_cart= document.querySelector('.btn_cart')
+              let cart= document.querySelector('.shopping_cart')
+              btn_cart.onclick = function(){
+                cart.classList.toggle('visible');
+              }
+
+              
+              if(localStorage.getItem('panier') == null){
+                var panier = {};
+              }else{
+                panier = JSON.parse(localStorage.getItem('panier'));
+              }
+              $(document).on('click','.add', function(){
+                console.log('ok');
+                var item_id = this.id.toString();
+                console.log(item_id);
+                if(panier[item_id]!= undefined){
+                  panier[item_id] = panier[item_id] +1;
+                }else{
+                  panier[item_id] = 1;
+                }
+                console.log(panier);
+                localStorage.getItem('panier', JSON.stringify(panier));
+                console.log(Object.keys(panier).length);
+                document.getElementById('cart_length').innerHTML = Object.keys(panier).length
+              })
+            </script>
+            <script src="https://unpkg.com/htmx.org@1.1.0"></script>
+            <script>
+              document.body.addEventListener('htmx:configRequest', (event) => {
+                event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+              })
+            </script>
+        </body>    
+    </html>

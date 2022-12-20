@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block coontent_home %}
+<section id="trading">
+    <div class="container">
+      <h3 class="text-center section-heading">- The Best Restaurants -</h3>
+    </div>
+
+    <div class="restaurants">
+      <div class="info_resto">
+        <hr>
+        {% block infos_resto %}{% endblock infos_resto %}
+      </div>
+        {% for restaurant in restaurants %}
+      <div class="resto">
+        <div class="img_restaurant">
+          <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}">
+        </div>
+        <div class="description_restaurant">
+              <div class="descrip_head">
+                <small>{{ restaurant.location }}
+                <span class="detail_resto"><h5>show more ...</h5></span>
+              </div>
+            <h1>{{ restaurant.name }}</h1>
+          <p>{{ restaurant.description }}
+            <br><b>Services disponibles:</b><br>· Repas sur place <br>· Vente à emporter <br>· Livraison
+            <br><b>Ouvert de :</b> {{ restaurant.h_open }}h, a {{ restaurant.h_close }}h
+          </p>
+          <div class="foot_descript">
+            <span><h4 class="food-rating">
+              <span> {{ restaurant.rating }} </span>
+              <div class="rating">
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star"></ion-icon>
+                <ion-icon name="star-half-outline"></ion-icon>
+              </div>
+            </h4></span>
+            <input class="reservation" value="Réservation">
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+      <div class="prods_resto">
+      {% block produits_restaurant %}{% endblock produits_restaurant %}
+      </div>
+    </div>
+  </section>
+{% endblock coontent_home %}

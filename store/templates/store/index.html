@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+
+
+{% block content_cart %}
+{% endblock content_cart %}
+
+{% block coontent_home %}
+    <section id="trading">
+        <div class="container">
+        <h3 class="text-center section-heading">- popular Delivery -</h3>
+        </div>
+        <div class="container">
+        <div class="swiper tranding-slider">
+            <div class="swiper-wrapper">
+            <!-- Slide-start -->
+            {% for product in products %}
+            <div class="swiper-slide tranding-slide">
+                <div class="tranding-slide-img">
+                  {% if product.image_link == '' %}
+                      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                  {% else %}
+                    <img src="{{ product.image_link}}" alt="{{ product.name }}">
+                  {% endif %}
+                </div>
+                <div class="tranding-slide-content">
+                    <div class="add" id="{{ product.id }}">
+                        <h1 class="food-add"><ion-icon name="add-circle-outline"></ion-icon></h1>
+                    </div>
+                    <div class="price">
+                        <h1 class="food-price">{{ product.price }} </h1><h4>fcfa</h4>
+                    </div>
+                    <div class="tranding-slide-content-bottom">
+                        <h2 class="food-name">{{ product.name }}</h2>
+                        <h3 class="food-rating">
+                        <span>{{ product.rating }}</span>
+                            <div class="rating">
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                                <ion-icon name="star"></ion-icon>
+                            </div>
+                        </h3>
+                </div>
+                </div>
+            </div>
+        {% endfor %}
+            <!-- Slide-end -->
+            </div>
+
+            <div class="tranding-slider-control">
+            <div class="swiper-button-prev slider-arrow">
+                <ion-icon name="arrow-back-outline"></ion-icon>
+            </div>
+            <div class="swiper-button-next slider-arrow">
+                <ion-icon name="arrow-forward-outline"></ion-icon>
+            </div>
+            <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+        </div>
+    </section>
+    <br>
+    <div style="display:flex; justify-content: space-around; padding:2rem;margin-top: 2rem;z-index: 0;">
+      <div class="css-1nxsoqg" role="list">
+        <div class="css-albjzg" role="listitem">
+          <div class="css-ox6yeh"><div class="css-1vk12gd">
+            <picture data-test-id="responsive-image" class="css-aruc50">
+              <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 2x" media="(max-width: 767px)">
+              <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 2x" media="(min-width: 768px) and (max-width: 991px)">
+              <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png 2x" media="(min-width: 992px)">
+              <img class="css-aruc50" src="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon1new.png" role="presentation" alt="" loading="lazy"></picture>
+            </div>
+              <h3 class="css-70xars">Gagnez du temps et prenez du plaisir à cuisiner de façon abordable</h3>
+              <p class="css-xz5ev2">Les ingrédients de nos box vous sont livrés dans les bonnes quantités pour vous permettre de cuisiner vos repas de manière économique et sans gaspillage. Il ne vous reste plus qu’à enfiler votre tablier !</p>
+            </div>
+          </div>
+          <div class="css-albjzg" role="listitem">
+            <div class="css-ox6yeh"><div class="css-1vk12gd">
+              <picture data-test-id="responsive-image" class="css-aruc50">
+                <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 2x" media="(max-width: 767px)">
+                <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 2x" media="(min-width: 768px) and (max-width: 991px)">
+                <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png 2x" media="(min-width: 992px)"><img class="css-aruc50" src="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon2new.png" role="presentation" alt="" loading="lazy"></picture>
+              </div>
+              <h3 class="css-70xars">Un service de livraison de nourriture flexible pour toute la famille</h3>
+              <p class="css-xz5ev2">Passez commande sur notre site de livraison de nourriture et réceptionnez votre box chaque semaine. Ajoutez des recettes familiales à votre box et recevez tous les ingrédients pour réaliser vos repas pour une famille avec enfant(s).</p>
+              </div>
+            </div>
+            <div class="css-albjzg" role="listitem">
+              <div class="css-ox6yeh">
+                <div class="css-1vk12gd">
+                  <picture data-test-id="responsive-image" class="css-aruc50">
+                  <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 2x" media="(max-width: 767px)">
+                  <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 2x" media="(min-width: 768px) and (max-width: 991px)">
+                  <source srcset="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 1x, https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_750/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png 2x" media="(min-width: 992px)">
+                  <img class="css-aruc50" src="https://img.hellofresh.com/f_auto,fl_lossy,q_auto,w_375/hellofresh_website/gb/cms/SEO/Business KWs/icon3new.png" role="presentation" alt="" loading="lazy"></picture>
+                </div>
+                <h3 class="css-70xars">Des ingrédients frais, locaux et de saison</h3>
+                <p class="css-xz5ev2">HelloFresh s’engage pour l’écologie et le développement durable. Nos chefs développent des recettes à partir d’ingrédients locaux et de saison – pour une assiette savoureuse et respectueuse de l’environnement.</p>
+              </div>
+            </div>
+      </div>
+    </div>
+{% endblock coontent_home %}
+
+
+
