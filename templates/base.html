@@ -22,7 +22,7 @@
                   <li class="nav-item"><a href="{% url 'restaurants' %}">Restaurant</a></li>
                   <li class="nav-item"><a href="#">SuperMarket</a></li>
                   <li class="nav-item"><a href="#">Contact Us</a></li>
-                  <li class="nav-item"><a href="#">Connexion</a></li>
+                  <li class="nav-item"><a href="{% url 'Login' %}">Connexion</a></li>
                 <ul>
               </div>
               <div>
@@ -65,7 +65,7 @@
             <div class="shopping_cart visible">
               <h1>Your Cart</h1>
               <hr>
-              <span class="reload"><ion-icon name="refresh-outline"></ion-icon></span>
+              <span class="close_cart"><ion-icon name="close"></ion-icon></span>
               <div class="content_cart">
                 {% block content_cart %}
                 {% endblock content_cart %}
@@ -143,29 +143,11 @@
             <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
             <script src="{% static 'js/script.js' %}"></script>
             <script>
-              var TrandingSlider = new Swiper('.tranding-slider', {
-                  effect: 'coverflow',
-                  grabCursor: true,
-                  centeredSlides: true,
-                  loop: true,
-                  slidesPerView: 'auto',
-                  coverflowEffect: {
-                      rotate: 0,
-                      stretch: 0,
-                      depth: 100,
-                      modifier: 2.5,
-                  },
-                  pagination: {
-                      el: '.swiper-pagination',
-                      clickable: true,
-                  },
-                  navigation: {
-                      nextEl: '.swiper-button-next',
-                      prevEl: '.swiper-button-prev',
-                  }
-                  });
-              
-
+              document.body.addEventListener('htmx:configRequest', (event) => {
+                event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+              })
+            </script>
+            <script>
               let btn_search= document.querySelector('.btn_search');
               let search= document.querySelector('.search');
               btn_search.onclick = function(){
@@ -174,9 +156,19 @@
               let btn_cart= document.querySelector('.btn_cart')
               let cart= document.querySelector('.shopping_cart')
               btn_cart.onclick = function(){
-                cart.classList.toggle('visible');
+                cart.classList.remove('visible');
               }
-
+              $(document).on('click','.close_cart', function(){
+                cart.classList.add('visible');
+              })
+              
+              let info_resto = document.querySelector('.info_resto');
+              $(document).on('click','.detail_resto', function(){
+                info_resto.classList.remove('affiche');
+              })
+              $(document).on('click','.close_info_resto', function(){
+                info_resto.classList.add('affiche');
+              })
               
               if(localStorage.getItem('panier') == null){
                 var panier = {};
@@ -199,10 +191,5 @@
               })
             </script>
             <script src="https://unpkg.com/htmx.org@1.1.0"></script>
-            <script>
-              document.body.addEventListener('htmx:configRequest', (event) => {
-                event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
-              })
-            </script>
         </body>    
     </html>

@@ -369,7 +369,7 @@ color: #fff;
   margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
-.shopping_cart .reload{
+.shopping_cart .close_cart{
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -379,7 +379,6 @@ color: #fff;
   cursor: pointer;
   color: #222224;
   z-index: 100000;
-  transform: rotate(40deg);
 }
 .content_cart{
   overflow: auto;
@@ -447,6 +446,8 @@ color: #fff;
 }
 /* end shopping cart style */
 
+
+/*  */
 .container {
   max-width: 124rem;
   max-height: 42rem;

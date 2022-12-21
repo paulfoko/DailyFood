@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from store.views import index,cart
 from restaurants.views import restaurant
+from accounts.views import login
 from DailyFood import settings
 from django.conf.urls.static import static
 
@@ -25,5 +26,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', index, name='home'),
     path('restaurants/', restaurant, name='restaurants'),
+    path('login_to_Dailyfood.cm/', login, name='Login'),
     path('admin/', admin.site.urls)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

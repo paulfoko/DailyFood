@@ -7,11 +7,22 @@
     </div>
 
     <div class="restaurants">
-      <div class="info_resto">
-        <hr>
-        {% block infos_resto %}{% endblock infos_resto %}
+      <div class="info_resto affiche">
+        <span class="close_info_resto"><ion-icon name="close-circle"></ion-icon></span>
+        <div class="content_info">
+          <div class="head">
+            <div class="head_img"><img src="{{ restaurants[1].image }}" alt="{{ restaurants.name }}"></div>
+            <div class="head_text">{{ restaurant.name }}</div>
+          </div>
+          <div class="description">
+            {{ restaurant.description }}
+          </div>
+          <hr>
+          {% block infos_resto %}{% endblock infos_resto %}
+        </div>
       </div>
-        {% for restaurant in restaurants %}
+
+      {% for restaurant in restaurants %}
       <div class="resto">
         <div class="img_restaurant">
           <img src="{{ restaurant.image }}" alt="{{ restaurant.name }}">
@@ -19,7 +30,7 @@
         <div class="description_restaurant">
               <div class="descrip_head">
                 <small>{{ restaurant.location }}
-                <span class="detail_resto"><h5>show more ...</h5></span>
+                <span class="detail_resto" id="{{ restaurant.id }}"><h4>show more ...</h4></span>
               </div>
             <h1>{{ restaurant.name }}</h1>
           <p>{{ restaurant.description }}

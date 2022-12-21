@@ -26,7 +26,8 @@
 }
 .detail_resto{
   position: absolute;
-  justify-self: end;margin-right: 0.5rem;
+  justify-self: end;
+  right: 3rem;
   color: rgba(255, 0, 0, 0.781);
   cursor: pointer;
 }
@@ -96,25 +97,62 @@ p{
   object-fit: fill;;
 }
 /* zone affichage contenue restaurant */
-
 .info_resto{
-  visibility: none;
-  width: 0;
-  height: 0;
-  position: absolute;
-  bottom: 0;
-}
-.affiche{
   position: fixed;
   width: 85vw;
-  height: 80vh;
-  top: 10VH;
-  overflow: auto;
+  height: 85vh;
+  top: 13VH;
   border-radius: 6px;
   box-shadow: 5px rgba(44, 44, 44, 0.801);
   backdrop-filter: blur(7px);
   background: rgba(214, 214, 214, 0.753);
   z-index: 10000000000;
+  transition: 0.5s;
+}
+.affiche{
+  visibility: none;
   transform: scale(0);
   transition: 0.5s;
+  width: 0;
+  height: 0;
+  bottom: -10rem;
+}
+.content_info{
+  overflow: auto;
+  margin: 10px;
+}
+.close_info_resto{
+  position: absolute;
+  top: -1.3rem;
+  right: -1.3rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: rgba(39, 39, 39, 0.795);
+  z-index: 90000000000000;
+}
+.info_resto .head{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  margin-left: 10%;
+  height: 20rem;
+}
+.info_resto .head img{
+  position: absolute;
+  width: 100%;
+  height: 100%;;
+}
+.info_resto .head_img{
+  position: absolute;
+  width: 100%;
+  height: 100%;;
+}
+.info_resto .head_text{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  text-align: center;
+  background: #31313136;
 }

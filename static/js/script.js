@@ -63,7 +63,8 @@ setInterval(function() {
     text_slider[etape].classList.add('print');
 }, 5000)
 
-  $(window).scrollTop() = 0;
+$(window).scrollTop() == 0;
+
 jQuery(document).ready(function() {
   
     let btn = document.querySelector('.btn_back_up');
@@ -86,14 +87,32 @@ jQuery(document).ready(function() {
       $('html, body').animate({scrollTop:0}, '300');
     });
   
-  });
+});
  
 $('.menu-toggle').click(function(){
     $(".nav").toggleClass("mobile-nav");
     $(this).toggleClass("is-active");
 });
   
-let detail_resto = document.querySelector('.detail-resto');
-detail_resto.onclick = function(){
-    cart.classList.toggle('affiche');
-}
+var TrandingSlider = new Swiper('.tranding-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+    });
+

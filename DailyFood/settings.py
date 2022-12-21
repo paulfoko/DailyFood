@@ -41,11 +41,13 @@ INSTALLED_APPS = [
     'accounts',
     'restaurants',
     'supermarcher',
+    'phone_field',
 ]
 
 
 AUTH_USER_MODEL = 'accounts.Shopper' 
-AUTHENTICATION_BACKENDS = ['accounts.userbackend.EmailBackend'] 
+AUTHENTICATION_BACKENDS = ['accounts.userbackend.ShopperBackend']
+ 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
