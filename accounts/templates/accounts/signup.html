@@ -1,0 +1,75 @@
+{% extends 'base_forms.html' %}
+{% block title %}Sign to DailyFood.cm {% endblock title %}
+{% block content_forms %}
+    <div class="container">
+        <div class="forms">
+            <div class="form inscription">
+                <span class="title">INSCRIPTION</span>
+
+                <form method="POST">
+                    {% csrf_token %}
+                    <div class="input-field">
+                        <input type="text" placeholder="Entrer votre nom" name"username" required>
+                        <ion-icon name="person-outline"></ion-icon>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" placeholder="Entrer votre adresse mail" name"email" required>
+                        <ion-icon name="mail-outline"></ion-icon>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" placeholder="creer un mot de passe"name"password" required>
+                        <ion-icon name="key-outline"></ion-icon>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" placeholder="confirmation du mot de passe" name"password2" required>
+                        <ion-icon name="key-outline"></ion-icon>
+                    </div>
+                    
+                    <div class="input-field button">
+                        <input type="submit" value="SignUp">
+                    </div>
+                    <a href="{% url 'home' %}">Annuler</a>
+                </form>    
+            </div>
+        </div>
+    </div>
+        
+    <script>
+        const container = document.querySelector(".container"),
+        pwShowHide = document.querySelectorAll(".showHidePw"),
+        pwFields = document.querySelectorAll(".password");
+        signUp = document.querySelector(".signup-link");
+        login  = document.querySelector(".login-link"),
+        
+        
+        pwShowHide.forEach(eyeIcon =>{
+            eyeIcon.addEventListener("click", ()=>{
+                pwFields.forEach(pwField =>{
+                    if(pwField.type ==="password"){
+                        pwField.type = "text";
+                        
+                        pwShowHide.forEach(icon => {
+                            pwShowHide.classList.replace("uil-eye-slash","uil-eye");
+                        })
+                    }else{
+                        pwField.type = "password";
+                        
+                        pwShowHide.forEach(icon =>{
+                            icon.classList.replace("uil-eye","uil-eye-slash")
+                        })
+                    }
+                })
+            })
+        }) 
+        
+
+        
+        signUp.addEventListener("click", ()=>{
+            container.classList.add("active");
+        });
+        
+        Login.addEventListener("click", ()=>{
+            container.classList.remove("active");
+        });
+    </script>
+{% endblock content_forms %}

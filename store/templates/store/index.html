@@ -17,7 +17,7 @@
             <div class="swiper-slide tranding-slide">
                 <div class="tranding-slide-img">
                   {% if product.image_link == '' %}
-                      <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
                   {% else %}
                     <img src="{{ product.image_link}}" alt="{{ product.name }}">
                   {% endif %}

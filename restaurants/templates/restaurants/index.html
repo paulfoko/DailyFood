@@ -5,17 +5,17 @@
     <div class="container">
       <h3 class="text-center section-heading">- The Best Restaurants -</h3>
     </div>
-
+    
     <div class="restaurants">
       <div class="info_resto affiche">
-        <span class="close_info_resto"><ion-icon name="close-circle"></ion-icon></span>
+        <span class="close_info_resto"><ion-icon name="close"></ion-icon></span>
         <div class="content_info">
           <div class="head">
-            <div class="head_img"><img src="{{ restaurants[1].image }}" alt="{{ restaurants.name }}"></div>
-            <div class="head_text">{{ restaurant.name }}</div>
+            <img class="head_img" src="{{ restaurants.0.image }}" alt="{{ restaurants.0.name }}">
+            <div class="head_text">{{ restaurants.0.name }} restaurant</div>
           </div>
-          <div class="description">
-            {{ restaurant.description }}
+          <div class="descript_resto">
+            {{ restaurants.0.description }}
           </div>
           <hr>
           {% block infos_resto %}{% endblock infos_resto %}

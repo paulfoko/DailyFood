@@ -1,16 +1,6 @@
-<DOCTYPE html>
-    {% load static %}
-    <html lang="en">
-        <head>
-            <meta charset="UTF-8"/>
-            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-            <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-            <link rel="stylesheet" href="{% static 'css/style_forms.css' %}">
-            <title>Login to DailyFood.cm</title>
-        </head>
-        <body>
-            <div class="back"><img src="{% static 'images/back_img.jpg' %}"></div>
+{% extends 'base_forms.html' %}
+{% block title %}Login to DailyFood.cm {% endblock title %}
+{% block content_forms %}
             <div class="back_flout"></div>
             <div class="container">
                 <div class="forms">
@@ -18,19 +8,15 @@
                     <div class="form login">
                         <span class="title">connexion</span>
 
-                        <form action="POST" method="/">
+                        <form method="POST" >
+                            {% csrf_token %}
                             <div class="input-field">
                                 <ion-icon name="mail-outline"></ion-icon>
                                 <input type="text" name="email" placeholder="Enter your email" required>
                             </div>
                             <div class="input-field">
                                 <ion-icon name="key-outline"></ion-icon>
-                                
                                 <input type="password" name="password" placeholder="Enter your password" id="inputpw" required>
-                                <span class="eyes" onclick="password_show()">
-                                    <ion-icon name="eye-outline" id="Hide1" ></ion-icon>
-                                    <ion-icon name="eye-off-outline" id="Hide2" class="show"></ion-icon>
-                                </span>
                             </div>
 
                            <div class="checkbox-text">
@@ -48,7 +34,7 @@
                         
                         <div class="login-signup">
                             <span class="text">pas de compte ?
-                                <a href="#" class="text signup-text">cliquez ici !</a>
+                                <a href="{% url 'Signup' %}" class="text signup-text">cliquez ici !</a>
                             </span>
                         </div>
                     </div>
@@ -72,8 +58,4 @@
             }
             
         </script>
-        </body>
-        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script> 
-        
-    </html>
+{% endblock content_forms %}

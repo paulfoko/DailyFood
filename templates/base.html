@@ -14,37 +14,37 @@
         </head>
         <body>
           <div class="container_head">
-            <nav class="nav-bar">
-              <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
-              <div>
-                <ul class="nav">
-                  <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
-                  <li class="nav-item"><a href="{% url 'restaurants' %}">Restaurant</a></li>
-                  <li class="nav-item"><a href="#">SuperMarket</a></li>
-                  <li class="nav-item"><a href="#">Contact Us</a></li>
-                  <li class="nav-item"><a href="{% url 'Login' %}">Connexion</a></li>
-                <ul>
-              </div>
-              <div>
-                <ul class="nav no-search">
-                  <li>
-                    <div style="display:flex;">
-                      <div class="btn_cart"><ion-icon name="cart"></ion-icon></div>
-                      <div class="nbr_produit"><h6 id="cart_length">0</h6></div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="search">
-                      <div class="btn_search"></div>
-                      <div class="search-input">
-                        <input type="text" id="input_search" placeholder="Search ..."/>
+              <nav class="nav-bar">
+                <div class="logo"><img src="{% static 'images/logo.png' %}"></div>
+                <div>
+                  <ul class="nav">
+                    <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
+                    <li class="nav-item"><a href="{% url 'restaurants' %}">Restaurant</a></li>
+                    <li class="nav-item"><a href="#">SuperMarket</a></li>
+                    <li class="nav-item"><a href="#">Join Us</a></li>
+                    <li class="nav-item"><a href="{% url 'Login' %}">Connexion</a></li>
+                  <ul>
+                </div>
+                <div>
+                  <ul class="nav no-search">
+                    <li>
+                      <div style="display:flex;">
+                        <div class="btn_cart"><ion-icon name="cart"></ion-icon></div>
+                        <div class="nbr_produit"><h6 id="cart_length">0</h6></div>
                       </div>
-                      <span class="clear" onclick="document.getElementById('input_search').value =''"></span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+                    </li>
+                    <li>
+                      <div class="search">
+                        <div class="btn_search"></div>
+                        <div class="search-input">
+                          <input type="text" id="input_search" placeholder="Search ..."/>
+                        </div>
+                        <span class="clear" onclick="document.getElementById('input_search').value =''"></span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
               <div class="description">
                 <div class="text print">Profitez des meilleurs services de livraisons.</div>
                 <div class="text">Profitez des meilleurs services de restaurations.</div>

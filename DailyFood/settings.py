@@ -37,16 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'phone_field',
     'store',
     'accounts',
     'restaurants',
     'supermarcher',
-    'phone_field',
 ]
 
-
 AUTH_USER_MODEL = 'accounts.Shopper' 
-AUTHENTICATION_BACKENDS = ['accounts.userbackend.ShopperBackend']
  
 
 MIDDLEWARE = [
