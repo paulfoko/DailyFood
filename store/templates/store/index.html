@@ -34,11 +34,41 @@
                         <h3 class="food-rating">
                         <span>{{ product.rating }}</span>
                             <div class="rating">
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
-                                <ion-icon name="star"></ion-icon>
+                                {% if product.rating >= 1 %}
+                                    <ion-icon name="star"></ion-icon>
+                                    {% if product.rating >= 2 %}
+                                        <ion-icon name="star"></ion-icon>
+                                        {% if product.rating >= 3 %}
+                                            <ion-icon name="star"></ion-icon>
+                                            {% if product.rating  >= 4 %}
+                                                <ion-icon name="star"></ion-icon>
+                                                {% if product.rating  >= 5 %}
+                                                    <ion-icon name="star"></ion-icon>
+                                                {% else %}
+                                                    <ion-icon name="star-half-outline"></ion-icon>
+                                                {% endif %}
+                                            {% else %}
+                                                {% if  product.rating  == 4 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                                                <ion-icon name="star-outline"></ion-icon>
+                                            {% endif %}
+                                        {% else %}
+                                            {% if  product.rating  == 3 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                                            <ion-icon name="star-outline"></ion-icon>
+                                            <ion-icon name="star-outline"></ion-icon>
+                                        {% endif %}
+                                    {% else %}
+                                        {% if  product.rating  == 2 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                        <ion-icon name="star-outline"></ion-icon>
+                                    {% endif %}
+                                {% else %}
+                                    {% if  product.rating  == 1 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <ion-icon name="star-outline"></ion-icon>
+                                    <ion-icon name="star-outline"></ion-icon>
+                                {% endif %}
                             </div>
                         </h3>
                 </div>

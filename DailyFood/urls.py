@@ -15,18 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from store.views import index,cart
+from store.views import index
 from restaurants.views import restaurant
 from accounts.views import login_shopper, signup_shopper
 from DailyFood import settings
 from django.conf.urls.static import static
 
-
-
 urlpatterns = [
-    path('', index, name='home'),
-    path('Dailyfood.cm/restaurants/', restaurant, name='restaurants'),
-    path('Dailyfood.cm/signup/', signup_shopper, name='Signup'),
-    path('Dailyfood.cm/login/', login_shopper, name='Login'),
-    path('admin/', admin.site.urls)
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
+                  path('', index, name='home'),
+                  path('Dailyfood.cm/restaurants/', restaurant, name='restaurants'),
+                  path('Dailyfood.cm/signup/', signup_shopper, name='Signup'),
+                  path('Dailyfood.cm/login/', login_shopper, name='Login'),
+                  path('admin/', admin.site.urls)
+              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
