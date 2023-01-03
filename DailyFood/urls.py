@@ -14,17 +14,22 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from store.views import index
 from restaurants.views import restaurant
 from accounts.views import login_shopper, signup_shopper
 from DailyFood import settings
 from django.conf.urls.static import static
+from store.urls import router as router_produit
+from rest_framework import routers
 
+router = routers.DefaultRouter()
+router.registry.extend(router_produit.registry) 
 urlpatterns = [
                   path('', index, name='home'),
-                  path('Dailyfood.cm/restaurants/', restaurant, name='restaurants'),
-                  path('Dailyfood.cm/signup/', signup_shopper, name='Signup'),
-                  path('Dailyfood.cm/login/', login_shopper, name='Login'),
+                  path('api/', include(router.urls)),
+                  path('restaurants/', restaurant, name='restaurants'),
+                  path('signup/', signup_shopper, name='Signup'),
+                  path('login/', login_shopper, name='Login'),
                   path('admin/', admin.site.urls)
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -37,12 +37,20 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
+    'django_filters',
     'phone_field',
     'store',
     'accounts',
     'restaurants',
     'supermarcher',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ]
+}
 
 AUTH_USER_MODEL = 'accounts.Shopper' 
  
@@ -130,7 +138,7 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = "/products/"
-MEDIA_URL = "/restaurants/"
+MEDIA_URL = '/restaurants/'
+MEDIA_URL = '/products/'
 MEDIA_ROOT = BASE_DIR / 'static/images'
 

@@ -45,7 +45,7 @@
                                                 {% if product.rating  >= 5 %}
                                                     <ion-icon name="star"></ion-icon>
                                                 {% else %}
-                                                    <ion-icon name="star-half-outline"></ion-icon>
+                                                  {% if  product.rating  > 4 %}<ion-icon name="star-half-outline"></ion-icon>{% else %}<ion-icon name="star-outline"></ion-icon>{% endif %}
                                                 {% endif %}
                                             {% else %}
                                                 {% if  product.rating  == 4 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}

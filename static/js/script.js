@@ -1,6 +1,24 @@
 var element, length, deg, z, move=0;
 
+// nav bar 
 
+let navToggle = document.querySelector(".nav__toggle");
+let navWrapper = document.querySelector(".nav__wrapper");
+
+navToggle.addEventListener("click", function () {
+  if (navWrapper.classList.contains("active")) {
+    this.setAttribute("aria-expanded", "false");
+    this.setAttribute("aria-label", "menu");
+    navWrapper.classList.remove("active");
+  } else {
+    navWrapper.classList.add("active");
+    this.setAttribute("aria-label", "close menu");
+    this.setAttribute("aria-expanded", "true");
+    searchForm.classList.remove("active");
+  }
+});
+
+// end nav bar
 let back_to_top = document.querySelector('.btn_back_up');
 window.addEventListener('scroll', () => {
 if (window.pageYOffset > 100) {
@@ -94,25 +112,5 @@ $('.menu-toggle').click(function(){
     $(this).toggleClass("is-active");
 });
   
-var TrandingSlider = new Swiper('.tranding-slider', {
-    effect: 'coverflow',
-    grabCursor: true,
-    centeredSlides: true,
-    loop: true,
-    slidesPerView: 'auto',
-    coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 100,
-        modifier: 2.5,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    }
-    });
+
 
