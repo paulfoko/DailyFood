@@ -45,37 +45,36 @@
             <span><h4 class="food-rating">
               <span> {{ restaurant.rating }} </span>
               <div class="rating">
-                {% if restaurant.rating >= 1 %}
+                {% if restaurant.rating >= 1.0 %}
                   <ion-icon name="star"></ion-icon>
-                  {% if restaurant.rating >= 2 %}
+                  {% if restaurant.rating >= 2.0 %}
                     <ion-icon name="star"></ion-icon>
-                    {% if restaurant.rating >= 3 %}
+                    {% if restaurant.rating >= 3.0 %}
                       <ion-icon name="star"></ion-icon>
-                      {% if restaurant.rating  >= 4 %}
+                      {% if restaurant.rating  >= 4.0 %}
                         <ion-icon name="star"></ion-icon>
-                        {% if restaurant.rating  >= 5 %}
+                        {% if restaurant.rating  >= 5.0 %}
                           <ion-icon name="star"></ion-icon>
                         {% else %}
-                          {% if  restaurant.rating  > 4 %}
-                            <ion-icon name="star-half-outline"></ion-icon>{% else %}<ion-icon name="star-outline"></ion-icon>{% endif %}
+                          {% if  restaurant.rating  > 4.0 %}<ion-icon name="star-half-outline"></ion-icon>{% else %}<ion-icon name="star-outline"></ion-icon>{% endif %}
                         {% endif %}
                       {% else %}
-                        {% if  restaurant.rating  == 4 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                        {% if  restaurant.rating  == 4.0 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
                         <ion-icon name="star-outline"></ion-icon>
                       {% endif %}
                     {% else %}
-                      {% if  restaurant.rating  == 3 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
-                        <ion-icon name="star-outline"></ion-icon>
-                        <ion-icon name="star-outline"></ion-icon>
+                      {% if  restaurant.rating  == 3.0 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                      <ion-icon name="star-outline"></ion-icon>
+                      <ion-icon name="star-outline"></ion-icon>
                     {% endif %}
                   {% else %}
-                      {% if  restaurant.rating  == 2 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
-                      <ion-icon name="star-outline"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
-                      <ion-icon name="star-outline"></ion-icon>
+                    {% if  restaurant.rating  == 2.0 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
+                    <ion-icon name="star-outline"></ion-icon>
                   {% endif %}
                 {% else %}
-                  {% if  restaurant.rating  == 1 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
+                  {% if  restaurant.rating  == 1.0 %}<ion-icon name="star-outline"></ion-icon>{% else %}<ion-icon name="star-half-outline"></ion-icon>{% endif %}
                   <ion-icon name="star-outline"></ion-icon>
                   <ion-icon name="star-outline"></ion-icon>
                   <ion-icon name="star-outline"></ion-icon>

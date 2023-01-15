@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from store.views import index
-from restaurants.views import restaurant
+from restaurants.views import restaurant, join_us, sign_resto, resto
 from accounts.views import login_shopper, signup_shopper
 from DailyFood import settings
 from django.conf.urls.static import static
@@ -29,6 +29,9 @@ urlpatterns = [
                   path('', index, name='home'),
                   path('api/', include(router.urls)),
                   path('restaurants/', restaurant, name='restaurants'),
+                  path('join_us/', join_us, name='join_us'),
+                  path('administration/inscription', sign_resto, name='sign_resto'),
+                  path('administration/restaurant', resto, name='resto'),
                   path('signup/', signup_shopper, name='Signup'),
                   path('login/', login_shopper, name='Login'),
                   path('admin/', admin.site.urls)

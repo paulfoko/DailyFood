@@ -1,7 +1,8 @@
 from django.contrib.auth import get_user_model, login, logout, authenticate
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
+from django.forms import ModelForm
 
-User = get_user_model()
 
 def signup_shopper(request):
     if request.method == "POST": 
@@ -23,7 +24,8 @@ def login_shopper(request):
         user = authenticate(username=username, password=password)
         if user:
             login(request, user)
-            return redirect('home')   
+            return redirect('home', foo='bar') 
+          
     return render(request,'accounts/forms.html')
 
 

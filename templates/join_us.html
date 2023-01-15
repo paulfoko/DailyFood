@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>{% load static %}
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="{% static 'css/style_join_us.css' %}">
+        <title>JOIN US</title>
+    </head>
+    <body>
+        <div class="head">
+            <h1>Bienvenu sur la page d'administration de DailyFood.cm</h1>
+        </div>
+        <div class="container">
+            <div class="container_box">
+                <div class = "img">
+                    <img src="{% static 'images/livreur.jpg' %}" alt="">
+                </div>
+                <div class="container_text">
+                    <p>
+                        <h2>Vous etez un livreur ?</h2>
+                        <br><h4><a href="#">cliquez ici ...</a></h4>
+                    </p>
+                </div>
+            </div>
+            <div class="container_box">
+                <div class = "img">
+                    <img src="{% static 'images/restaurant.jpg' %}" alt="">
+                </div>
+                <div class="container_text">
+                    <p>
+                        <h2>Vous etez un Restaurant ?</h2>
+                        <br><h4><a href="{% url 'sign_resto' %}">cliquez ici ...</a></h4>
+                    </p>
+                </div>
+            </div>
+            <div class="container_box">
+                <div class = "img">
+                    <img src="{% static 'images/super_marcher.jpg' %}" alt="">
+                </div>
+                <div class="container_text">
+                    <p>
+                        <h2> Vous etez un Super Marcher ?</h2>
+                        <br><h4><a href="#">cliquez ici ...</a></h4>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

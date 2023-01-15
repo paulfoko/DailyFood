@@ -8,7 +8,7 @@ class PorductViewSet(viewsets.ModelViewSet):
     queryset = Product.objects.all()
     serializer_class = PorductSerializer
     Permission_classes = (IsAuthenticated,)
-    filterset_fields = ['id', 'location1']
+    filterset_fields = ['id', 'location']
 
 def index(request):
     products = Product.objects.all()

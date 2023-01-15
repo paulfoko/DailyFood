@@ -22,7 +22,7 @@
                     <li class="nav-item"><a href="{% url 'home' %}">Home</a></li>
                     <li class="nav-item"><a href="{% url 'restaurants' %}">Restaurant</a></li>
                     <li class="nav-item"><a href="#">SuperMarket</a></li>
-                    <li class="nav-item"><a href="#">Join Us</a></li>
+                    <li class="nav-item"><a href="{% url 'join_us' %}">Join Us</a></li>
                     <li class="nav-item"><a href="{% url 'Login' %}">Connexion</a></li>
                   <ul>
                 </div>
@@ -69,19 +69,6 @@
               <hr>
               <span class="close_cart"><ion-icon name="close"></ion-icon></span>
               <div id="cart" class="content_cart">
-                {% comment %} <div class="Box_article">
-                {% if product.image_link == '' %}
-                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                {% else %}
-                  <img src="{{ product.image_link}}" alt="{{ product.name }}">
-                {% endif %}
-                  <div class="content">
-                      <h3>{{ product.name }}</h3>
-                      <span class="article_price">{{ product.price }} fcfa/-</span>
-                      <span class="article_quant">Qty : <input class="qte" type="number" value="1"></span>
-                  </div>
-                  <Span class="btn_delete"><ion-icon name="trash-outline"></ion-icon></Span>
-              </div> {% endcomment %}
               </div>
               <hr>
               <span class="total"><h2>Total :</h2><h2 id="total"> 0 </h2><h4>fcfa</h4></span>

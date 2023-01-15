@@ -1,12 +1,11 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 class Restaurant(models.Model):
-    name = models.CharField(max_length=100)
+    account = models.OneToOneField(User, on_delete=models.CASCADE)
     description = models.CharField(max_length=150, blank=True)
-    SERVICES = (('Vente à emporter', 'Vente à emporter'),
-                ('Livraison', 'Livraison'))
-    service1 = models.CharField(max_length=50, choices=SERVICES, blank=True, null=True)
-    service2 = models.CharField(max_length=50, choices=SERVICES, blank=True, null=True)
+    services = models.CharField(max_length=250, blank=False, null=False)
     adresse = models.CharField(max_length=150, blank=False)
     rating = models.FloatField(default=0.0)
     h_open = models.TimeField()

@@ -22,8 +22,7 @@ class Product(models.Model):
     rating = models.FloatField(default=0.0)
     description = models.TextField(max_length=1500, blank=True)
     date_add = models.DateTimeField(auto_now=True)
-    location1 = models.ForeignKey(Restaurant, related_name='source', on_delete=models.CASCADE, null=True, blank=True)
-    location2 = models.ForeignKey(SuperMarket, related_name='source', on_delete=models.CASCADE, null=True, blank=True)
+    location = models.ForeignKey(Restaurant, related_name='source', on_delete=models.CASCADE, null=True, blank=True)
     Category = models.ForeignKey(Category, related_name='categorie', on_delete=models.CASCADE)
     class Meta:
         ordering = ['-date_add']
